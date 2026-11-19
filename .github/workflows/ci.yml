@@ -13,9 +13,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      #Descarga el código
       - name: 1. Descargar el código
         uses: actions/checkout@v4
 
+      #Instala Node.js
       - name: 2. Instalar Node.js 20
         uses: actions/setup-node@v4
         with:

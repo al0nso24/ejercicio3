@@ -6,12 +6,16 @@ const cursos = [
     { id: 2, nombre: 'Base de Datos' }
 ]
 
+//Parámetro id
+//req contiene la información de la solicitud
+//res permite construir y enviar la respuesta
 app.get('/api/cursos/:id', (req, res) => {
     //Number(req.params.id) convierte el :id de la URL (texto) a número
     const curso = cursos.find(c => c.id === Number(req.params.id));
     if(!curso){
         return res.status(404).json({error: "Curso no encontrado"});
     }
+    //Devuelve la respuesta
     res.json(curso);
 })
 
